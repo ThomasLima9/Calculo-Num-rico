@@ -3,135 +3,256 @@ clc
 clear all
 
 #EXERCICIO 1----------------
-% exemplo a = 1:1:50 primeiro termo começa no primeiro : espaçamento : final
-#for i = 1:50;
-#  disp(i)
-#endfor
+#exemplo a = 1:1:50 primeiro termo começa no primeiro : espaçamento : final
+for i = 1:50;
+  disp(i)
+endfor
 
 #EXERCICIO 2----------------
-#for i = 2:2:100
-#  disp(i)
-#endfor
+for i = 2:2:100
+  disp(i)
+endfor
 
 #EXERCICIO 3--------------
 
-#n = input('Digite um número de 1 a 10: ');
-#if n < 1 || n > 10
-#    fprintf('Numero inválido\n')
+n = input('Digite um número de 1 a 10: ');
+if n < 1 || n > 10
+    fprintf('Numero inválido\n')
 
-#  else
-#    fprintf('Tabuada do %d\n', n)
+  else
+    fprintf('Tabuada do %d\n', n)
 
-#    for i = 1:10
-#      conta = n * i;
-#      fprintf('%d X %d = %d\n', n , i ,conta);
-#    end
+    for i = 1:10
+      conta = n * i;
+      fprintf('%d X %d = %d\n', n , i ,conta);
+    end
 
-#end
+end
 
 #EXERCICIO 4-------------
 
-#contador_pares = 0
-#contador_impares = 0
+contador_pares = 0
+contador_impares = 0
 
-#for i = 1:10
-#  n = input('Digite um número: ');
+for i = 1:10
+  n = input('Digite um número: ');
 
-#  if mod(n,2) == 0
-#    contador_pares = contador_pares + 1;
+  if mod(n,2) == 0
+    contador_pares = contador_pares + 1;
 
-#  else
-#    contador_impares = contador_impares + 1;
+  else
+    contador_impares = contador_impares + 1;
 
-#  endif
+  endif
 
-#endfor
+endfor
 
-#fprintf('O numero de pares é %d\n', contador_pares);
-#fprintf('O numero de impares é %d\n', contador_impares);
+fprintf('O numero de pares é %d\n', contador_pares);
+fprintf('O numero de impares é %d\n', contador_impares);
 
 #EXERCICIO 5------------
 
-#conta_fora = 0
-#conta_dentro = 0
+conta_fora = 0
+conta_dentro = 0
 
-#for i = 1:10
-#  n = input('Digite um número: ');
+for i = 1:10
+  n = input('Digite um número: ');
 
-#  if n >= 0 && n <= 10
-#    conta_dentro = conta_dentro + 1;
+  if n >= 0 && n <= 10
+    conta_dentro = conta_dentro + 1;
 
-#  else
-#    conta_fora = conta_fora + 1;
+  else
+    conta_fora = conta_fora + 1;
 
-#  endif
+  endif
 
-#endfor
+endfor
 
-#fprintf('Tem %d dentro do intervalo\n' , conta_dentro)
-#fprintf('Tem %d fora do intervalo\n' , conta_fora)
+fprintf('Tem %d dentro do intervalo\n' , conta_dentro)
+fprintf('Tem %d fora do intervalo\n' , conta_fora)
 
 #EXERCICIO 6----------
 
-#for i = 1:11
-#  fprintf(' %d - Eu adoro programar\n' , i)
+for i = 1:11
+  fprintf(' %d - Eu adoro programar\n' , i)
 
-#endfor
+endfor
 
 #EXERCICIO 7------------
 
-#raiz = input('Digite um número para calcular sua raiz: ');
-#conta = sqrt(raiz);
-#if raiz < 0
-#  fprintf('A raiz quadrada e imaginária')
+raiz = input('Digite um número para calcular sua raiz: ');
+conta = sqrt(raiz);
+if raiz < 0
+  fprintf('A raiz quadrada e imaginária')
 
-#else
-# fprintf('O resultado é %d\n', conta)
+else
+ fprintf('O resultado é %d\n', conta)
 
-#endif
+endif
 
 #EXERCICIO 8 --------------
 
-#lado1 = input('Digite o comprimento do lado1: ');
-#lado2 = input('Digite o comprimento do lado2: ');
-#lado3 = input('Digite o comprimento do lado3: ');
+lado1 = input('Digite o comprimento do lado1: ');
+lado2 = input('Digite o comprimento do lado2: ');
+lado3 = input('Digite o comprimento do lado3: ');
 
-#if lado1 == lado2 && lado2 == lado3
-#  fprintf('O trinagulo e equilatero')
+if lado1 == lado2 && lado2 == lado3
+  fprintf('O trinagulo e equilatero')
 
-#elseif lado1 == lado2 || lado2 == lado3 || lado1 == lado3
-#  fprintf('O tringulo é isosceles')
+elseif lado1 == lado2 || lado2 == lado3 || lado1 == lado3
+  fprintf('O tringulo é isosceles')
 
-#else
-#  fprintf('O trinagulo e escaleno')
+else
+  fprintf('O trinagulo e escaleno')
 
-#endif
+endif
 
 #EXERCICIO 9 --------------
 
+v1 = input('Digite o primeiro valor: ');
+v2 = input('Digite o segundo valor: ');
+v3 = input('Digite o terceiro valor: ');
 
-#somatorio = 0;
+vetor = [v1 v2 v3];
 
-#for i = 1:20;
-#  k = i;
-#  somatorio = k^k;
+vetor_ordenado = sort(vetor);
 
-#endfor
 
-#fprintf('Resultado é %d', somatorio)
+fprintf('Numeros escolhidos: %d %d %d\n', vetor);
+fprintf('Numeros ordenados: %d %d %d\n', vetor_ordenado);
 
-#EXERCICIO 12
 
-a = input('Digite a altura (h): ');
+#EXERCICIO 10 --------------
+
+while true
+  n = input('Digite um número: ')
+
+  if n <= 1
+    break
+
+  else
+    continue
+
+  endif
+
+end
+
+disp('Número menor ou igual a 1 encontrado. Programa encerrado.');
+
+#EXERCICIO 11--------------
+
+soma = 0
+
+while true
+  numero = input('Digite o numero ( 0 para parar): ');
+
+  if numero == 0;
+    break;
+  end
+  soma = soma + numero;
+end
+
+fprintf('A soma dos números digitados é: %d\n', soma);
+
+#EXERCICIO 12--------------
+a = input('Digite a altura (a): ');
 b = input('Digite a base (b): ');
 
-area = area_triag(a,b);
+function area = triag(a,b)
 
+  area = (b*a)/2;
+
+end
+
+area = triag(a, b);
 
 fprintf('A área do triângulo é: %d \n', area);
 
-# podese usar o lambda por exemplo area = @(a,b) b*h/2
-#EXERCICIO 18
+#podese usar o lambda por exemplo area = @(a,b) b*h/2
+
+#EXERCICIO 13--------------
+
+while true
+  n = input('Digite um número entre 1 a 10: ');
+
+  if n >= 0 && n <= 10;
+    break;
+
+  else
+    disp('Número inválido');
+
+  end
+
+end
+
+fprintf('Número válido digitado: %d\n', n);
+
+
+#EXERCICIO 14--------------
+maior = -inf;
+for i = 1:5;
+  n = input(sprintf('Digite o %dº  numero!:' , i));
+
+  if n > maior;
+    maior = n;
+  end
+end
+
+fprintf('O maior numero foi %d', maior);
+
+#EXERCICIO 15--------------
+soma = 0
+for i = 1:5;
+  n = input(sprintf('Digite o %dº  numero!:' , i));
+  soma = soma + n;
+end
+
+media = soma/ 5;
+
+fprintf('A soma dos números é: %d\n', soma);
+fprintf('A média dos números é: %.2f\n', media);
+
+#EXERCICIO 16--------------
+
+clc
+clear all
+
+n1 = input('Digite o primeiro numero: ');
+n2 = input('Digite o segundo numero: ');
+
+if n1 > n2
+  [n1 , n2] = deal(n2,n1);
+end
+
+fprintf('Os números inteiros entre %d e %d são:\n', n1, n2);
+
+for i = (n1):(n2)
+  fprintf('%d ', i);
+end
+
+fprintf('\n'
+
+
+#EXERCICIO 17--------------
+
+n = input('Digite um número de 1 a 10: ');
+
+if n < 1 || n > 10
+    fprintf('Numero inválido\n')
+
+  else
+    fprintf('Tabuada do %d\n', n)
+
+    for i = 1:10
+      conta = n * i;
+      fprintf('%d X %d = %d\n', n , i ,conta);
+    end
+
+end
+
+
+
+#EXERCICIO 18--------------
 
 n1 = 1;
 n2 = 1;
@@ -165,17 +286,374 @@ while true
  end
 end
 
-#EXERCICIO 13
+#EX 18 exemplo professor
+
+
+#n = input('Digite o n-ésimo termo:');
+#F(1) = 1;
+#F(2) = 1;
+
+#for i = 3:n
+#  F(i) = F(i-1) + F(i-2);
+#end
+
+#disp(F)
+
+
+#EXERCICIO 19--------------
+
+n = input('')
+
+
+function f = fatorial(n)
+  f = 1;
+  for i = 2:n
+    f = f * i
+  end
+end
+
+resultado = fatorial(n)
+
+disp(resultado)
+
+#EXERCICIO 20--------------
+clc
+clear all
+
+n = input('');
+
+valores = zeros(1,n);
+
+for i = 1:n
+  valores(i) = input(sprintf('Digite o %d número: ', i));
+end
+
+maior = max(valores);
+menor = min(valores);
+soma = sum(valores);
+
+fprintf('Menor valor: %d\n', menor);
+fprintf('Maior valor: %d\n', maior);
+fprintf('Soma dos valores: %d\n', soma);
+
+#EXERCICIO 21--------------
+
+n = input('Digite um número inteiro: ');
+
+verif = isprime(n);
+
+if verif == 1
+  disp('O número é primo')
+
+else
+
+  disp('O número não é primo')
+
+end
+
+#EXERCICIO 22--------------
+
+n = input('Digite um número inteiro: ');
+
+verif = isprime(n);
+
+if verif == 1
+  disp('O número é primo')
+
+else
+  disp('O número não é primo')
+  disp('Ele é divisivel por: ')
+  for i = 1:n
+    if mod(n,i) == 0
+      fprintf('%d\n',i)
+
+
+    end
+  end
+end
+
+#EXERCICIO 23--------------
+n = input('Digite n: ');
+
+for i = 1:n
+  verif = isprime(i);
+  if verif == 1;
+
+    fprintf('%d é numero primo\n', i)
+
+  endif
+
+end
+
+#EXERCICIO 24--------------
+
+clc
+clear all
+
+limite = 10000;
+
+for i = 1: limite
+  if isprime(i) && isprime(i + 2)
+    fprintf('(%d,%d) são primos gemeos\n', i , i+2)
+
+  endif
+
+end
+
+#EXERCICIO 25--------------
+
+clc
+clear all
+
+limite = 10000;
+
+for i = 1: limite - 6
+  if isprime(i) && isprime(i + 2) && isprime(i + 6)
+    fprintf('(%d,%d,%d) são primos gemeos\n', i , i+2,i+6)
+
+  endif
+
+end
+
+#EXERCICIO 26--------------
+
+clc
+clear all
+
+N = input('Digite N:');
+display('Todas as somas possiveis: ')
+for p = 1:N
+  q = N - p;
+  if isprime(q) && isprime(p)
+    fprintf('%d + %d = %d\n', p , q, N);
+
+  endif
+
+end
+
+#EXERCICIO 27--------------
+n = 1;
+contador = 0;
+
+while contador < 1001
+  n = n + 1;
+  if isprime(n)
+
+    contador = contador + 1;
+
+  end
+end
+
+n
+
+
+#EXERCICIO 28--------------
+soma = 0;
+
+for i = 2:10000
+  if isprime(i)
+    soma = soma + i;
+  end
+end
+
+soma
+
+#EXERCICIO 29--------------
+clc
+clear all
+
+n = input('Digite um numero N: ');
+
+function inv = inverter_numero(n)
+  inv = 0;
+  while n > 0
+    ultimo_digito = mod(n,10);
+    inv = inv * 10 + ultimo_digito;
+    n = floor(n / 10);
+  endwhile
+endfunction
+
+inverso = inverter_numero(n);
+fprintf('O número invertido é: %d\n', inverso);
+
+#EXERCICIO 30--------------
+
+n = input('Digite a n-ésimo termo: ');
+h = 0;
+
+for i = 1:n;
+
+  h = h + 1/i;
+
+endfor
+
+fprintf('Valor de H é : %d', h);
+
+#EXERCICIO 31--------------
+n = input('Dê o valor de n: ')
+S = 0
+for i = 1:n
+  S = S + i/(2*i - 1)
+endfor
+
+S
+
+#EXERCICIO 32--------------
+
+#EXERCICIO 33--------------
+#EXERCICIO 34--------------
+#EXERCICIO 35--------------
+#EXERCICIO 36--------------
+#EXERCICIO 37--------------
 
 
 
 
 
+#EXERCICIO 30
+
+#n = input('Digite a n-ésimo termo: ');
+#h = 0;
+
+#for i = 1:n;
+
+#  h = h + 1/i;
+
+#endfor
+
+#fprintf('Valor de H é : %d', h);
 
 
+#EXERCICIO 36
+
+#function fn = seq(n)
+
+#  if mod(n,2) == 1
+#    fn = 1;
+
+#  else
+#    fn = 2/(n + 2);
+
+#  end
+
+#end
+
+#exercicio professor
+%{
+lista = [];
+while length(lista) < 100
+  for i = 1:1000
+    if isprime(i);
+      lista = [lista,i];
+    endif
+
+  endfor
+
+end
+
+fprintf('%d\n', lista)
+%}
+
+%{
+v = []
+n = 2
+countador = 1
+while count <= 100
+  if isprime(n) == 1
+    v(count) = n
+    count += 1
+   endif
+  n += 1
+endwhile
+%}
+
+%{
+contador = 0;
+i = 0;
+p = [];
+while contador < 100;
+
+  i = i + 1;
+
+  if isprime(i);
+    contador = contador + 1;
+    p = [p i];
+
+  endif
+
+end
+
+disp('Os 100 primeiros números primos são:');
+disp(p);
+
+%}
+
+#Prova 1
+#1)
+
+n1 = input('Digite o n1: ')
+n2 = input('Digite o n2: ')
+
+inicio = min(n1,n2)
+fim = max(n1,n2)
+
+soma_par = 0;
+
+for i = inicio:fim
+
+  if mod(i,2) == 0
+    soma_par = soma_par + i;
 
 
+  endif
 
+end
+
+fprintf('A soma dos pares %d e %d é igual a %d', inicio , fim , soma_par);
+
+#2)
+
+n = input('Digite o nésimo termo: ')
+soma = 0
+
+for i = 1 : n
+  soma = soma + i^3
+end
+
+fprintf('A soma é: %d' , soma);
+
+#3)
+
+for i = 1:+inf
+  an = 2^(1/n)
+end
+
+plot(i,an)
+
+#4)
+
+n = input('Digite n: ');
+
+contador = 0
+num = 2
+
+fprintf('Os %d primeiros números primos são:\n', n);
+
+while contador < n
+  if isprime(num) == 1
+    fprintf('%d ', num);
+    contador = contador + 1;
+  end
+  num = num + 1;
+end
+
+fprintf('\n');
+
+#5) a)
+
+function [x1 , x2 , x3= r_numero(n)
+  x1 = 
+  
 
 
 
